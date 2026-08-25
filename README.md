@@ -51,7 +51,7 @@ Seeding workflows
 
 Admin and content management
 - Public dashboard: /dashboard — browse featured idioms/proverbs and access sign-in/register flow.
-- Sign-in page: /auth/signin — supports local email/password sign-up and login. The seeded owner account is stefanustankaemingk2@gmail.com / $T3f2110129.
+- Sign-in page: /auth/signin — supports local email/password sign-up and login. The seeded owner account is stefanustankaemingk2@gmail.com.
 - Admin UI: /admin — create, edit, delete expressions and import/export seed JSON.
 - Owner user management: /admin/users — owner/admin can view all users and change roles (USER, ADMIN, OWNER).
 - Import via API: POST /api/admin/import-seed (requires x-admin-secret header in production)
