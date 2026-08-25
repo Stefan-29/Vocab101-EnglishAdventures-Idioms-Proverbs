@@ -1,4 +1,4 @@
-// File: D:\EnglishAdventures\Vocabulary Modules\Web App\app\admin\page.tsx
+// File: D:\OneDrive Cloud Storage\OneDrive\문서\GitHub\Vocab101-EnglishAdventures-Idioms-Proverbs\app\admin\page.tsx
 import * as entry from '../../../../app/admin/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

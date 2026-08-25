@@ -1,11 +1,20 @@
 {
-  "/page": "app/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/admin/dashboard/page": "app/admin/dashboard/page.js",
+  "/admin/users/page": "app/admin/users/page.js",
   "/admin/page": "app/admin/page.js",
-  "/auth/signin/page": "app/auth/signin/page.js",
-  "/api/expressions/route": "app/api/expressions/route.js",
-  "/api/categories/route": "app/api/categories/route.js",
-  "/idioms/page": "app/idioms/page.js",
   "/api/admin/import-seed/route": "app/api/admin/import-seed/route.js",
-  "/explore/page": "app/explore/page.js"
+  "/api/admin/export-seed/route": "app/api/admin/export-seed/route.js",
+  "/api/admin/expressions/route": "app/api/admin/expressions/route.js",
+  "/api/categories/route": "app/api/categories/route.js",
+  "/api/expressions/[id]/route": "app/api/expressions/[id]/route.js",
+  "/api/admin/users/route": "app/api/admin/users/route.js",
+  "/api/session/route": "app/api/session/route.js",
+  "/api/expressions/route": "app/api/expressions/route.js",
+  "/explore/[id]/page": "app/explore/[id]/page.js",
+  "/auth/signin/page": "app/auth/signin/page.js",
+  "/explore/page": "app/explore/page.js",
+  "/idioms/page": "app/idioms/page.js",
+  "/page": "app/page.js",
+  "/dashboard/page": "app/dashboard/page.js"
 }

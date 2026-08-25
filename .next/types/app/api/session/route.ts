@@ -1,4 +1,4 @@
-// File: D:\EnglishAdventures\Vocabulary Modules\Web App\app\api\session\route.ts
+// File: D:\OneDrive Cloud Storage\OneDrive\문서\GitHub\Vocab101-EnglishAdventures-Idioms-Proverbs\app\api\session\route.ts
 import * as entry from '../../../../../app/api/session/route.js'
 import type { NextRequest } from 'next/server.js'
 

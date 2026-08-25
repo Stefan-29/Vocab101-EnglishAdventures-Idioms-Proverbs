@@ -51,7 +51,7 @@ Seeding workflows
 
 Admin and content management
 - Public dashboard: /dashboard — browse featured idioms/proverbs and access sign-in/register flow.
-- Sign-in page: /auth/signin — supports local email/password sign-up and login. The seeded owner account is stefanustankaemingk2@gmail.com / $T3f2110129.
+- Sign-in page: /auth/signin — supports local email/password sign-up and login. The seeded owner account is stefanustankaemingk2@gmail.com.
 - Admin UI: /admin — create, edit, delete expressions and import/export seed JSON.
 - Owner user management: /admin/users — owner/admin can view all users and change roles (USER, ADMIN, OWNER).
 - Import via API: POST /api/admin/import-seed (requires x-admin-secret header in production)
@@ -72,6 +72,19 @@ Production build & deploy
 Hosting options
 - Vercel: straightforward for Next.js; use Postgres for DB. Set environment vars in project settings.
 - Render / DigitalOcean App / small VM: can host with persistent filesystem (SQLite ok) and env vars.
+
+Vercel deployment checklist
+1. Create a hosted Postgres database, for example a Neon database connected through the Vercel Storage/Marketplace integration. Do not use `file:./dev.db` on Vercel.
+2. Change the Prisma datasource provider in `prisma/schema.prisma` from `sqlite` to `postgresql`.
+3. With the hosted Postgres `DATABASE_URL` configured locally, create and commit the first migration:
+   `npx prisma migrate dev --name init`
+4. Change the build command in Vercel (or the `build` script) to run migrations before the Next.js build:
+   `prisma migrate deploy && prisma generate && next build`
+5. Add these variables in Vercel Project Settings -> Environment Variables for Production and Preview as appropriate:
+   `DATABASE_URL` (the hosted Postgres connection string), `NEXTAUTH_URL` (the deployed site URL), `NEXTAUTH_SECRET` (a long random value), `AUTH_SECRET`, `ADMIN_SECRET`, `NEXT_PUBLIC_APP_URL` (the deployed site URL), `OWNER_EMAIL`, and `OWNER_PASSWORD`.
+6. Redeploy after saving the variables. Then seed the hosted database once from a machine that can access it:
+   PowerShell: `$env:DATABASE_URL="<hosted-url>"; npm run seed`
+7. Check Vercel Runtime Logs if `/api/session` still returns 500. A missing table indicates migrations were not deployed; a Prisma connection error indicates an incorrect or unavailable `DATABASE_URL`.
 
 Migrations & schema changes
 - Development: prisma migrate dev --name <desc>
