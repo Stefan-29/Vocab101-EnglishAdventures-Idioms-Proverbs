@@ -1,0 +1,11 @@
+{
+  "/page": "app/page.js",
+  "/admin/dashboard/page": "app/admin/dashboard/page.js",
+  "/admin/page": "app/admin/page.js",
+  "/auth/signin/page": "app/auth/signin/page.js",
+  "/api/expressions/route": "app/api/expressions/route.js",
+  "/api/categories/route": "app/api/categories/route.js",
+  "/idioms/page": "app/idioms/page.js",
+  "/api/admin/import-seed/route": "app/api/admin/import-seed/route.js",
+  "/explore/page": "app/explore/page.js"
+}
